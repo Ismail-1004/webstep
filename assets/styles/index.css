@@ -1,0 +1,45 @@
+@import 'fonts.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* root start  */
+
+body {
+    background: linear-gradient(to right, #1B263B, #415A77);
+}
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+:root {
+    --ML300: 'Montserrat-Light';
+    --MR400: 'Montserrat-Regular';
+    --MB700: 'Montserrat-Bold';
+}
+
+/* root end */
+/* ********************** */
+
+/* keyframes start */
+@keyframes upAndDown {
+    0% {
+        transform: translateY(-2%);
+    }
+    50% {
+        transform: translateY(2%);
+    }
+    100% {
+        transform: translateY(-2%);
+    }
+}
+/* keyframes end */
