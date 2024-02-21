@@ -1,11 +1,13 @@
 <script setup>
+const { t } = useI18n()
+
 const courses = [
-    { title: 'Веб Программирование', img: '/_nuxt/assets/images/courses/web.png' },
-    { title: 'Дропшиппинг', img: '/_nuxt/assets/images/courses/drop.png' },
-    { title: 'Интернет Маркетинг', img: '/_nuxt/assets/images/courses/smm.png' },
-    { title: 'Scratch', img: '/_nuxt/assets/images/courses/scratch.png' },
-    { title: 'Веб Дизайн', img: '/_nuxt/assets/images/courses/disign.png' },
-    { title: '3Ds Max', img: '/_nuxt/assets/images/courses/3d.png' }
+    { title: t('courses.programming'), img: '/_nuxt/assets/images/courses/web.png' },
+    { title: t('courses.drop'), img: '/_nuxt/assets/images/courses/drop.png' },
+    { title: t('courses.smm'), img: '/_nuxt/assets/images/courses/smm.png' },
+    { title: t('courses.scratch'), img: '/_nuxt/assets/images/courses/scratch.png' },
+    { title: t('courses.design'), img: '/_nuxt/assets/images/courses/disign.png' },
+    { title: t('courses.three'), img: '/_nuxt/assets/images/courses/3d.png' }
 ]
 </script>
 

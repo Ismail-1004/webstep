@@ -1,0 +1,20 @@
+{
+    "header": {
+        "navigation": {
+            "courses": "Kurslar",
+            "coworking": "Kovorking",
+            "contacts": "Kontaktlar",
+            "location": "Manzil"
+        },
+        "title": "Zamonaviy Kasblar Kurslari",
+        "start": "Kursga Yozilish"
+    },
+    "courses": {
+        "programming": "Web Dasturlash",
+        "drop": "Dropshipping",
+        "smm": "Internet Marketing",
+        "scratch": "Scratch",
+        "design": "Web Design",
+        "three": "3DS Max & Autocad"
+    }
+}

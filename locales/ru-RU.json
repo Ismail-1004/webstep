@@ -1,0 +1,20 @@
+{
+    "header": {
+        "navigation": {
+            "courses": "Курсы",
+            "coworking": "Коворкинг",
+            "contacts": "Контакты",
+            "location": "Локация"
+        },
+        "title": "Курсы Современных Профессий",
+        "start": "Начать обучение"
+    },
+    "courses": {
+        "programming": "Веб Программирование",
+        "drop": "Дропшиппинг",
+        "smm": "Интернет Маркетинг",
+        "scratch": "Scratch",
+        "design": "Веб Дизайн",
+        "three": "3DS Max & Autocad"
+    }
+}
