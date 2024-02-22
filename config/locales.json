@@ -1,0 +1,23 @@
+{
+  "locales": [
+    {
+      "name": "Русский",
+      "code": "ru",
+      "iso": "ru-RU",
+      "file": "ru-RU.json"
+    },
+    {
+      "name": "English",
+      "code": "en",
+      "iso": "en-US",
+      "file": "en-US.json"
+    },
+    {
+      "name": "O'zbek",
+      "code": "uz",
+      "iso": "uz-UZ",
+      "file": "uz-UZ.json"
+    }
+  ],
+  "langDir": "locales/"
+}
