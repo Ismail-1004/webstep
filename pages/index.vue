@@ -17,6 +17,7 @@ const courses = [
             <course-card v-for="course in courses" :key="course.title" :course="course" />
         </div>
     </section>
+
 </template>
 
 <style lang="scss" scoped>
@@ -24,6 +25,11 @@ const courses = [
     &__content {
         display: grid;
         grid-template-columns: repeat(3,1fr);
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(6,2fr);
+            overflow: scroll;
+        }
     }
 }
 </style>

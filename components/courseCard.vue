@@ -28,6 +28,7 @@ defineProps({
 
   &__img {
     width: 250px;
+    text-align: center;
   }
 
   &__title {

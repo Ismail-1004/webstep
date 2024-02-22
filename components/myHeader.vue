@@ -69,6 +69,10 @@ const switchLocalePath = useSwitchLocalePath()
     justify-content: space-between;
     align-items: center;
     height: 100px;
+    
+    @media (max-width: 1200px) {
+      padding: 20px 15px;
+    }
 
     &-logo {
       width: 170px;
@@ -105,7 +109,11 @@ const switchLocalePath = useSwitchLocalePath()
     display: flex;
     align-items: flex-end;
 
-    @media (max-width: 576px) {
+    @media (max-width: 992px) {
+      align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
       align-items: center;
     }
 
@@ -158,10 +166,8 @@ const switchLocalePath = useSwitchLocalePath()
       @media (max-width: 992px) {
         max-width: 100%;
         text-align: center;
-      }
-
-      @media (max-width: 768px) {
         font-size: 40px;
+        max-width: 500px;
         line-height: 65px;
       }
 
@@ -181,7 +187,7 @@ const switchLocalePath = useSwitchLocalePath()
       border: none;
       cursor: pointer;
 
-      @media (max-width: 768px) {
+      @media (max-width: 992px) {
         margin-top: 40px;
         font-size: 24px;
       }
@@ -199,7 +205,7 @@ const switchLocalePath = useSwitchLocalePath()
         transition: 0.3s;
 
         @media (max-width: 1200px) {
-          width: 400px;
+          width: 350px;
         }
 
         @media (max-width: 576px) {
