@@ -2,12 +2,12 @@
 const { t } = useI18n()
 
 const courses = [
-    { title: t('courses.programming'), img: '/_nuxt/assets/images/courses/web.png' },
-    { title: t('courses.drop'), img: '/_nuxt/assets/images/courses/drop.png' },
-    { title: t('courses.smm'), img: '/_nuxt/assets/images/courses/smm.png' },
-    { title: t('courses.scratch'), img: '/_nuxt/assets/images/courses/scratch.png' },
-    { title: t('courses.design'), img: '/_nuxt/assets/images/courses/disign.png' },
-    { title: t('courses.three'), img: '/_nuxt/assets/images/courses/3d.png' }
+    { title: t('courses.programming'), img: '/assets/assets/images/courses/web.png' },
+    { title: t('courses.drop'), img: '/assets/images/courses/drop.png' },
+    { title: t('courses.smm'), img: '/assets/images/courses/smm.png' },
+    { title: t('courses.scratch'), img: '/assets/images/courses/scratch.png' },
+    { title: t('courses.design'), img: '/assets/images/courses/disign.png' },
+    { title: t('courses.three'), img: '/assets/images/courses/3d.png' }
 ]
 </script>
 
@@ -27,7 +27,7 @@ const courses = [
         grid-template-columns: repeat(3,1fr);
 
         @media (max-width: 992px) {
-            grid-template-columns: repeat(6,2fr);
+            grid-template-columns: repeat(6,1fr);
             overflow: scroll;
         }
     }
