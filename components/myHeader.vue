@@ -1,55 +1,68 @@
 <script setup>
-const { locale } = useI18n()
+const { locale } = useI18n();
 const localePath = useLocalePath();
-const switchLocalePath = useSwitchLocalePath()
+const switchLocalePath = useSwitchLocalePath();
+
+const ifScroll = ref(false);
+
+onMounted(() => {
+  window.addEventListener("scroll", function (event) {
+    ifScroll.value = window.scrollY > 50;
+  });
+});
 </script>
 
 <template>
   <header class="header">
-    <nav class="header__nav container">
-      <NuxtLink :to="localePath('/')">
-        <img
-          src="@/assets/images/header/logo.png"
-          class="header__nav-logo"
-          alt="logo"
-        />
-      </NuxtLink>
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <NuxtLink :to="localePath('/')" class="header__nav-link">
-            {{ $t('header.navigation.courses') }}
-          </NuxtLink>
-        </li>
-        <li class="header__nav-item">
-          <NuxtLink :to="localePath('/')" class="header__nav-link">
-            {{ $t('header.navigation.coworking') }}
-          </NuxtLink>
-        </li>
-        <li class="header__nav-item">
-          <NuxtLink :to="localePath('/')" class="header__nav-link">
-            {{ $t('header.navigation.contacts') }}
-          </NuxtLink>
-        </li>
-        <li class="header__nav-item">
-          <NuxtLink :to="localePath('/')" class="header__nav-link">
-            {{ $t('header.navigation.location') }}
-          </NuxtLink>
-        </li>
-      </ul>
-      <div class="header__nav-locales">
-        <NuxtLink :to="switchLocalePath('ru')" v-if="locale !== 'ru'">
-          <img src="@/assets/images/header/ru.png" alt="ru-flag" />
+    <nav :class="['header__nav', { fixed: ifScroll }]">
+      <div class="header__nav-content container">
+        <div class="header__nav-burger">
+          <img src="@/assets/images/header/menu.png" alt="Menu">
+        </div>
+        <NuxtLink :to="localePath('/')">
+          <img
+            src="@/assets/images/header/logo.png"
+            class="header__nav-logo"
+            alt="logo"
+          />
         </NuxtLink>
-        <NuxtLink :to="switchLocalePath('uz')" v-else>
-          <img src="@/assets/images/header/uz.png" alt="uz-flag" />
-        </NuxtLink>
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <NuxtLink :to="localePath('/')" class="header__nav-link">
+              {{ $t("header.navigation.courses") }}
+            </NuxtLink>
+          </li>
+          <li class="header__nav-item">
+            <NuxtLink :to="localePath('/')" class="header__nav-link">
+              {{ $t("header.navigation.coworking") }}
+            </NuxtLink>
+          </li>
+          <li class="header__nav-item">
+            <NuxtLink :to="localePath('/')" class="header__nav-link">
+              {{ $t("header.navigation.contacts") }}
+            </NuxtLink>
+          </li>
+          <li class="header__nav-item">
+            <NuxtLink :to="localePath('/')" class="header__nav-link">
+              {{ $t("header.navigation.location") }}
+            </NuxtLink>
+          </li>
+        </ul>
+        <div class="header__nav-locales">
+          <NuxtLink :to="switchLocalePath('ru')" v-if="locale !== 'ru'">
+            <img src="@/assets/images/header/ru.png" alt="ru-flag" />
+          </NuxtLink>
+          <NuxtLink :to="switchLocalePath('uz')" v-else>
+            <img src="@/assets/images/header/uz.png" alt="uz-flag" />
+          </NuxtLink>
+        </div>
       </div>
     </nav>
     <div class="header__content container">
       <div class="header__content-content">
         <div class="header__content-titles">
-          <h1 class="header__content-title">{{ $t('header.title') }}</h1>
-          <button class="header__content-btn"> {{ $t('header.start') }} </button>
+          <h1 class="header__content-title">{{ $t("header.title") }}</h1>
+          <button class="header__content-btn">{{ $t("header.start") }}</button>
         </div>
         <div class="header__content-image">
           <img src="@/assets/images/header/header-content.png" alt="web" />
@@ -65,13 +78,35 @@ const switchLocalePath = useSwitchLocalePath()
   flex-direction: column;
   height: 100vh;
   &__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    
-    @media (max-width: 1200px) {
-      padding: 20px 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    transition: 0.2s;
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+
+      @media (max-width: 992px) {
+        height: 40px;
+      }
+    }
+
+    &.fixed {
+      background: black;
+    }
+
+    &-burger {
+      display: none;
+
+      @media (max-width: 992px) {
+        display: block;
+      }
     }
 
     &-logo {
@@ -102,6 +137,10 @@ const switchLocalePath = useSwitchLocalePath()
           width: 40px;
         }
       }
+    }
+
+    @media (max-width: 1200px) {
+      padding: 20px 15px;
     }
   }
   &__content {

@@ -272,8 +272,8 @@ const formats = [
 
       @media (max-width: 992px) {
         text-align: center;
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 16px;
+        line-height: 25px;
       }
     }
 
