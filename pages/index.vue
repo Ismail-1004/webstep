@@ -2,12 +2,12 @@
 const { t } = useI18n()
 
 const courses = [
-    { title: t('courses.programming'), img: 'web' },
-    { title: t('courses.drop'), img: 'drop' },
-    { title: t('courses.smm'), img: 'smm' },
-    { title: t('courses.scratch'), img: 'scratch' },
-    { title: t('courses.design'), img: 'disign' },
-    { title: t('courses.three'), img: '3d' }
+    { title: t('courses.programming'), img: '/web.png' },
+    { title: t('courses.drop'), img: '/drop.png' },
+    { title: t('courses.smm'), img: '/smm.png' },
+    { title: t('courses.scratch'), img: '/scratch.png' },
+    { title: t('courses.design'), img: '/disign.png' },
+    { title: t('courses.three'), img: './3d.png' }
 ]
 
 </script>
