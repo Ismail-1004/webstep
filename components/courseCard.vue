@@ -35,6 +35,7 @@ defineProps({
     color: white;
     font-family: var(--MR400);
     font-size: 25px;
+    text-align: center;
   }
 }
 </style>

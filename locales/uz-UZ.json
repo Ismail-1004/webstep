@@ -16,5 +16,9 @@
         "scratch": "Scratch",
         "design": "Web Design",
         "three": "3DS Max & Autocad"
+    },
+    "whyWe": {
+        "title": "Nega Bizni Tanlashadi?",
+        "text": "Bizning vazifamiz texnologiya maqsadlaringizga erishish uchun sizni ilhomlantirish va qo'llab-quvvatlashdir. Biz eng so'nggi sanoat tendentsiyalariga muvofiq mutaxassislar tomonidan ishlab chiqilgan keng ko'lamli kurslar va treninglarni taklif etamiz. Sizning mahorat darajangiz yoki maqsadlaringizdan qat'i nazar, bizda sizning potentsialingizni ro'yobga chiqarishga yordam beradigan dasturlar mavjud."
     }
 }

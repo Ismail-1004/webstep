@@ -110,10 +110,6 @@ const switchLocalePath = useSwitchLocalePath()
     align-items: flex-end;
 
     @media (max-width: 992px) {
-      align-items: flex-start;
-    }
-
-    @media (max-width: 768px) {
       align-items: center;
     }
 

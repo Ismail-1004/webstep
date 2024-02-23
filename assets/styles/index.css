@@ -21,6 +21,10 @@ body {
     padding: 0 15px;
 }
 
+.container-fluid {
+    padding: 0 15px;
+}
+
 :root {
     --ML300: 'Montserrat-Light';
     --MR400: 'Montserrat-Regular';
