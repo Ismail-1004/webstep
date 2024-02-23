@@ -11,10 +11,10 @@ const courses = [
 ];
 
 const formats = [
-  { title: "В ГРУППЕ", img: "/s-1.png" },
-  { title: "ИНДИВИДУАЛЬНО", img: "/s-2.png" },
-  { title: "ОЧНО", img: "/s-3.png" },
-  { title: "ОНЛАЙН", img: "/s-4.png" },
+  { title: t("format.group"), img: "/s-1.png" },
+  { title: t("format.individually"), img: "/s-2.png" },
+  { title: t("format.premanetly"), img: "/s-3.png" },
+  { title: t("format.online"), img: "/s-4.png" },
 ];
 </script>
 
@@ -41,7 +41,7 @@ const formats = [
     </section>
     <section class="study">
       <div class="study__content container">
-        <h2 class="study__content-title">Удобный формат обучения</h2>
+        <h2 class="study__content-title">{{ $t("format.title") }}</h2>
         <div class="study__content-formats">
           <div
             class="study__content-item"
@@ -52,6 +52,22 @@ const formats = [
             <h2>{{ format.title }}</h2>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="cowork">
+      <div class="cowork__content container">
+        <div class="cowork__content-info">
+          <h2 class="cowork__content-title">{{ $t("coworking.title") }}</h2>
+          <img
+            src="@/assets/images/cowork/cowork.png"
+            alt="Cowork"
+            class="cowork__content-img"
+          />
+          <p class="cowork__content-text">
+            {{ $t("coworking.text") }}
+          </p>
+        </div>
+        <img src="@/assets/images/cowork/cowork.png" alt="Cowork" />
       </div>
     </section>
   </div>
@@ -165,7 +181,7 @@ const formats = [
 }
 
 .study {
-    padding: 100px 0;
+  padding: 100px 0;
   &__content {
     &-title {
       font-family: var(--MB700);
@@ -175,11 +191,12 @@ const formats = [
       margin-bottom: 120px;
 
       @media (max-width: 768px) {
-        font-size: 25px;
+        font-size: 30px;
       }
     }
     &-formats {
       display: flex;
+      padding-bottom: 25px;
 
       @media (max-width: 1300px) {
         overflow: scroll;
@@ -191,13 +208,82 @@ const formats = [
         font-size: 25px;
         text-align: center;
         margin-top: 30px;
+
+        @media (max-width: 992px) {
+          font-size: 18px;
+        }
       }
     }
 
     &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
+
+.cowork {
+  background: white;
+  padding: 100px 0;
+
+  @media (max-width: 992px) {
+    padding: 80px 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media(max-width: 992px) {
+      justify-content: center;
+      & img:last-child {
+        display: none;
+      }
+    }
+
+    &-info {
+      @media (max-width: 992px) {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &-title {
+      color: #1b263bda;
+      font-size: 50px;
+      font-family: var(--MB700);
+      margin-bottom: 15px;
+
+      @media (max-width: 992px) {
+        margin-bottom: 5px;
+      }
+    }
+
+    &-text {
+      color: #1b263bda;
+      font-family: var(--MR400);
+      line-height: 32px;
+      font-size: 20px;
+      max-width: 650px;
+      text-align: justify;
+
+      @media (max-width: 992px) {
+        text-align: center;
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+
+    &-img {
+      display: none;
+
+      @media (max-width: 992px) {
+        display: block;
+        width: 300px;
+      }
     }
   }
 }
