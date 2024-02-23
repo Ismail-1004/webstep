@@ -9,6 +9,13 @@ const courses = [
   { title: t("courses.design"), img: "/disign.png" },
   { title: t("courses.three"), img: "./3d.png" },
 ];
+
+const formats = [
+  { title: "В ГРУППЕ", img: "/s-1.png" },
+  { title: "ИНДИВИДУАЛЬНО", img: "/s-2.png" },
+  { title: "ОЧНО", img: "/s-3.png" },
+  { title: "ОНЛАЙН", img: "/s-4.png" },
+];
 </script>
 
 <template>
@@ -30,6 +37,21 @@ const courses = [
           <p class="we__content-text">{{ $t("whyWe.text") }}</p>
         </div>
         <img src="@/assets/images/we/why.png" alt="why we" />
+      </div>
+    </section>
+    <section class="study">
+      <div class="study__content container">
+        <h2 class="study__content-title">Удобный формат обучения</h2>
+        <div class="study__content-formats">
+          <div
+            class="study__content-item"
+            v-for="format in formats"
+            :key="format.title"
+          >
+            <img :src="format.img" :alt="format.title" />
+            <h2>{{ format.title }}</h2>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -62,23 +84,23 @@ const courses = [
     align-items: center;
 
     & div {
-        img {
-            display: none;
-
-            @media (max-width: 992px) {
-                display: block;
-            }
-
-            @media (max-width: 768px) {
-                width: 200px;
-            }
-        }
+      img {
+        display: none;
 
         @media (max-width: 992px) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+          display: block;
         }
+
+        @media (max-width: 768px) {
+          width: 200px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     &-title {
@@ -138,6 +160,44 @@ const courses = [
           display: none;
         }
       }
+    }
+  }
+}
+
+.study {
+    padding: 100px 0;
+  &__content {
+    &-title {
+      font-family: var(--MB700);
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      margin-bottom: 120px;
+
+      @media (max-width: 768px) {
+        font-size: 25px;
+      }
+    }
+    &-formats {
+      display: flex;
+
+      @media (max-width: 1300px) {
+        overflow: scroll;
+      }
+
+      & h2 {
+        color: white;
+        font-family: var(--MR400);
+        font-size: 25px;
+        text-align: center;
+        margin-top: 30px;
+      }
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
   }
 }
