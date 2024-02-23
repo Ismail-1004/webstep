@@ -4,10 +4,20 @@ const localePath = useLocalePath();
 const switchLocalePath = useSwitchLocalePath();
 
 const ifScroll = ref(false);
+const menuIsActive = ref(false);
+
+const showMenu = () => {
+  menuIsActive.value = true;
+};
 
 onMounted(() => {
   window.addEventListener("scroll", function (event) {
-    ifScroll.value = window.scrollY > 50;
+    if (window.scrollY > 50) {
+      ifScroll.value = true;
+      menuIsActive.value = false
+    } else {
+      ifScroll.value = false
+    }
   });
 });
 </script>
@@ -15,10 +25,38 @@ onMounted(() => {
 <template>
   <header class="header">
     <nav :class="['header__nav', { fixed: ifScroll }]">
-      <div class="header__nav-content container">
+      <div class="header__nav-content container" @click="showMenu">
         <div class="header__nav-burger">
-          <img src="@/assets/images/header/menu.png" alt="Menu">
+          <img src="@/assets/images/header/menu.png" alt="Menu" />
         </div>
+
+        <ul :class="['header__nav-menu', { hide: !menuIsActive }]">
+          <li class="header__nav-menuItem">
+            <span></span>
+            <NuxtLink :to="localePath('/')" class="header__nav-menuLink">
+              {{ $t("header.navigation.courses") }}
+            </NuxtLink>
+          </li>
+          <li class="header__nav-menuItem">
+            <span></span>
+            <NuxtLink :to="localePath('/')" class="header__nav-menuLink">
+              {{ $t("header.navigation.coworking") }}
+            </NuxtLink>
+          </li>
+          <li class="header__nav-menuItem">
+            <span></span>
+            <NuxtLink :to="localePath('/')" class="header__nav-menuLink">
+              {{ $t("header.navigation.contacts") }}
+            </NuxtLink>
+          </li>
+          <li class="header__nav-menuItem">
+            <span></span>
+            <NuxtLink :to="localePath('/')" class="header__nav-menuLink">
+              {{ $t("header.navigation.location") }}
+            </NuxtLink>
+          </li>
+        </ul>
+
         <NuxtLink :to="localePath('/')">
           <img
             src="@/assets/images/header/logo.png"
@@ -106,6 +144,48 @@ onMounted(() => {
 
       @media (max-width: 992px) {
         display: block;
+      }
+    }
+
+    &-menu {
+      background: #ffffff1f;
+      max-width: 180px;
+      width: 100%;
+      padding: 40px 0;
+      border-radius: 0 20px 20px 0;
+      position: fixed;
+      top: 100%;
+      left: 0;
+      backdrop-filter: blur(15px);
+      transition: 0.2s;
+      z-index: 999;
+
+      &.hide {
+        transform: translateX(-100%);
+      }
+
+      & li {
+        display: flex;
+        align-items: center;
+
+        & span {
+          max-width: 20%;
+          width: 100%;
+          height: 1px;
+          background: white;
+          display: inline-block;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
+      & a {
+        color: white;
+        font-family: var(--MR400);
+        font-size: 18px;
+        margin-left: 10px;
       }
     }
 
