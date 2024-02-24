@@ -7,7 +7,7 @@ const ifScroll = ref(false);
 const menuIsActive = ref(false);
 
 const showMenu = () => {
-  menuIsActive.value = true;
+  menuIsActive.value = !menuIsActive.value;
 };
 
 onMounted(() => {
