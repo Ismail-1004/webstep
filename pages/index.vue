@@ -70,6 +70,10 @@ const formats = [
         <img src="@/assets/images/cowork/cowork.png" alt="Cowork" />
       </div>
     </section>
+    <section class="lesson container">
+      <lesson-component />
+    </section>
+
   </div>
 </template>
 
@@ -236,7 +240,7 @@ const formats = [
     justify-content: space-between;
     align-items: center;
 
-    @media(max-width: 992px) {
+    @media (max-width: 992px) {
       justify-content: center;
       & img:last-child {
         display: none;
@@ -285,6 +289,14 @@ const formats = [
         width: 300px;
       }
     }
+  }
+}
+
+.lesson {
+  padding: 50px 15px;
+
+  @media (max-width: 576px) {
+    padding: 30px 15px;
   }
 }
 </style>

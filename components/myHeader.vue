@@ -25,8 +25,8 @@ onMounted(() => {
 <template>
   <header class="header">
     <nav :class="['header__nav', { fixed: ifScroll }]">
-      <div class="header__nav-content container" @click="showMenu">
-        <div class="header__nav-burger">
+      <div class="header__nav-content container">
+        <div class="header__nav-burger" @click="showMenu">
           <img src="@/assets/images/header/menu.png" alt="Menu" />
         </div>
 
@@ -136,7 +136,8 @@ onMounted(() => {
     }
 
     &.fixed {
-      background: black;
+      background: rgba(0, 0, 0, 0.574);
+      backdrop-filter: blur(10px);
     }
 
     &-burger {
