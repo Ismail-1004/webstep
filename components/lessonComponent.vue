@@ -32,8 +32,9 @@
     }
 
     @media (max-width: 576px) {
-        font-size: 35px;
+        font-size: 30px;
         line-height: 48px;
+        margin-bottom: 20px;
     }
   }
 
@@ -69,7 +70,7 @@
       }
 
       @media (max-width: 576px) {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 30px;
       }
     }

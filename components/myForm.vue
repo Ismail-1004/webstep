@@ -41,7 +41,7 @@
     width: 100%;
 
     @media (max-width: 576px) {
-      font-size: 25px;
+      font-size: 20px;
       margin-bottom: 25px;
     }
   }
