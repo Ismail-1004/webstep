@@ -73,7 +73,7 @@ const formats = [
     <section class="lesson container">
       <lesson-component />
     </section>
-
+    <my-footer />
   </div>
 </template>
 
