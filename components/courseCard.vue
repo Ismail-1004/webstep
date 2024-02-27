@@ -9,15 +9,21 @@ defineProps({
 </script>
 
 <template>
-  <div class="card">
-    <img class="card__img" :src="course.img" :alt="course.title" />
-    <h2 class="card__title">{{ course.title }}</h2>
-  </div>
+  <NuxtLink :to="course.route" class="link">
+    <div class="card">
+      <img class="card__img" :src="course.img" :alt="course.title" />
+      <h2 class="card__title">{{ course.title }}</h2>
+    </div>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>
+.link {
+  height: 100%;
+}
 .card {
   width: 100%;
+  height: 100%;
   background: linear-gradient(257.65deg, #1b263b -171.23%, #415a77 79.52%);
   padding: 20px;
   display: flex;

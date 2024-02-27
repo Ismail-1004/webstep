@@ -1,13 +1,30 @@
 <script setup>
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 const courses = [
-  { title: t("courses.programming"), img: "/web.png" },
-  { title: t("courses.drop"), img: "/drop.png" },
-  { title: t("courses.smm"), img: "/smm.png" },
-  { title: t("courses.scratch"), img: "/scratch.png" },
-  { title: t("courses.design"), img: "/disign.png" },
-  { title: t("courses.three"), img: "./3d.png" },
+  {
+    title: t("courses.programming"),
+    img: "/web.png",
+    route: localePath("/web-development"),
+  },
+  {
+    title: t("courses.drop"),
+    img: "/drop.png",
+    route: localePath("/dropshippng"),
+  },
+  { title: t("courses.smm"), img: "/smm.png", route: localePath("/smm") },
+  {
+    title: t("courses.scratch"),
+    img: "/scratch.png",
+    route: localePath("/scratch"),
+  },
+  {
+    title: t("courses.design"),
+    img: "/disign.png",
+    route: localePath("/disign"),
+  },
+  { title: t("courses.three"), img: "./3d.png", route: localePath("3ds-max") },
 ];
 
 const formats = [
@@ -20,6 +37,7 @@ const formats = [
 
 <template>
   <div>
+    <my-header-content />
     <section class="courses">
       <div class="courses__content">
         <course-card
