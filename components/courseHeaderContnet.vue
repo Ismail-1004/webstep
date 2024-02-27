@@ -54,7 +54,7 @@
       }
 
       @media (max-width: 576px) {
-        padding: 40px 15px;
+        padding: 30px 15px;
         border-radius: 20px;
         justify-content: space-evenly;
       }
@@ -121,8 +121,8 @@
       }
 
       @media (max-width: 576px) {
-        font-size: 14px;
-        line-height: 23px;
+        font-size: 12px;
+        line-height: 21px;
         text-align: center;
       }
     }
@@ -148,6 +148,10 @@
 
         @media (max-width: 992px) {
           margin-top: 30px;
+        }
+
+        @media (max-width: 576px) {
+            margin-top: 20px;
         }
       }
 
