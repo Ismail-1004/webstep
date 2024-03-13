@@ -1,13 +1,40 @@
+<script setup>
+const formInfo = reactive({
+  name: '',
+  phone: '',
+  course: ''
+})
+
+const submit = async () => {
+  try {
+    console.log(123);
+    const response = await fetch(`https://tg-form-bot-1.onrender.com/api/submit`, {
+      method: "POST",
+      body: JSON.stringify(formInfo),
+       headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+
+    console.log(response);
+  } catch (e) {
+    throw e
+  }
+}
+</script>
+
 <template>
-  <form class="form">
+  <form class="form" @submit.prevent="submit">
     <h2 class="form__title">ЗАПОЛНИТЕ АНКЕТУ</h2>
-    <input type="text" class="form__input" placeholder="Имя Фамилия" />
-    <input type="text" class="form__input" placeholder="Номер телефона" />
-    <select id="" class="form__input">
-      <option value="" disabled selected>Выбор курса</option>
-      <option value="">Web Programming</option>
+    <input type="text" class="form__input" v-model="formInfo.name" :placeholder="$t('survey.fields.name')" />
+    <input type="text" class="form__input" v-model="formInfo.phone" :placeholder="$t('survey.fields.number')" />
+    <select id="" class="form__input" v-model="formInfo.course">
+      <option value="" disabled selected> {{ $t('survey.fields.course') }} </option>
+      <option value="webprogramming">Web Programming</option>
+      <option value="smm">SMM</option>
+      <option value="dropshipping">Dropshipping</option>
     </select>
-    <button class="form__btn">Оставить заявку</button>
+    <button class="form__btn">{{ $t('survey.button') }}</button>
   </form>
 </template>
 

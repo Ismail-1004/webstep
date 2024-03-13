@@ -1,7 +1,7 @@
 <template>
   <div class="header__content container">
     <div class="header__content-content">
-      <h1 class="header__content-title">ВЕБ ПРОГРАММИРОВАНИЕ</h1>
+      <h1 class="header__content-title"> {{ $t('courses.programming.title') }} </h1>
       <div class="header__content-info">
         <div class="header__content-image">
           <img
@@ -11,13 +11,10 @@
         </div>
         <div class="header__content-about">
           <p class="header__content-text">
-            На курсе ВЕБ ПРОГРАММИРОВАНИЯ вы изучите основные языки
-            программирования, научитесь создавать современные сайты,
-            познакомитесь с инструментами, которые используют успешные
-            веб-разработчики.
+            {{ $t('courses.programming.description') }}
           </p>
           <div class="header__content-btn-container">
-            <button class="header__content-btn">Записаться на курс</button>
+            <button class="header__content-btn"> {{ $t('buttons.signUpToCourse') }} </button>
           </div>
         </div>
       </div>
@@ -138,6 +135,7 @@
       -webkit-text-fill-color: transparent;
       color: #0b2349;
       display: table;
+      width: 100%;
 
       &-container {
         background: white;
@@ -145,6 +143,7 @@
         border-radius: 10px;
         margin-top: 60px;
         display: inline-block;
+        width: 80%;
 
         @media (max-width: 992px) {
           margin-top: 30px;

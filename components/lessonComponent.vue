@@ -1,12 +1,10 @@
 <template>
   <div class="lesson">
-    <h2 class="lesson__title">БЕСПЛАТНЫЙ ОТКРЫТЫЙ УРОК</h2>
+    <h2 class="lesson__title"> {{ $t('freeLesson.title') }} </h2>
     <div class="lesson__content">
       <div class="lesson__content-info">
         <p class="lesson__content-text">
-          Перед стартом каждого курса проводятся бесплатные открытые уроки, на
-          которых вы получите всю подробную информацию об обучении,
-          познакомитесь с преподавателем и сможете записаться.
+         {{ $t('freeLesson.description') }}
         </p>
       </div>
       <myForm />

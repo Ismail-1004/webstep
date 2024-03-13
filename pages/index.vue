@@ -4,7 +4,7 @@ const localePath = useLocalePath();
 
 const courses = [
   {
-    title: t("courses.programming"),
+    title: t("courses.programming.title"),
     img: "/web.png",
     route: localePath("/web-development"),
   },

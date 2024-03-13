@@ -1,9 +1,10 @@
 <script setup>
-
+import courseHeaderContnet from "~/components/courses/courseHeaderContnet.vue";
 </script>
+
 <template>
   <div>
-    <course-header-contnet />
+    <courseHeaderContnet />
   </div>
 </template>
 

@@ -10,7 +10,10 @@
         "start": "Kursga Yozilish"
     },
     "courses": {
-        "programming": "Web Dasturlash",
+        "programming": {
+            "title": "Web Dasturlash",
+            "description": "WEB DASTURLASH kursida siz asosiy dasturlash tillarini o'rganasiz, zamonaviy veb-saytlarni yaratishni o'rganasiz va muvaffaqiyatli veb-ishlab chiquvchilar foydalanadigan vositalar bilan tanishasiz."
+        },
         "drop": "Dropshipping",
         "smm": "Internet Marketing",
         "scratch": "Scratch",
@@ -31,5 +34,21 @@
     "coworking": {
         "title": "Kovorking",
         "text": "Kovorking maydoni - bu bizning talabalarimiz kelib qo'shimcha mashq qilishlari va tajribali ma'murlarning qattiq nazorati ostida uy vazifalarini bajarishlari uchun barcha zarur narsalar bilan jihozlangan ofis."
+    },
+    "buttons": {
+        "signUpToCourse": "Kursga yozilish"
+    },
+    "freeLesson": {
+        "title": "BEPUL OCHIQ DARS",
+        "description": "Har bir kurs boshlanishidan oldin bepul ochiq darslar o'tkaziladi, unda siz trening haqida barcha batafsil ma'lumotlarni olasiz, o'qituvchi bilan uchrashasiz va ro'yxatdan o'tishingiz mumkin."
+    },
+    "survey": {
+        "title": "ЗАПОЛНИТЕ АНКЕТУ",
+        "fields": {
+            "name": "Ism Familiya",
+            "number": "Telefon Raqami",
+            "course": "Kursni tanlang"
+        },
+        "button": "Arizangizni yuboring"
     }
 }
